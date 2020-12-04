@@ -1,0 +1,153 @@
+name: easy-oclif-cli
+version: 1
+category: oclif multi
+dirs:
+  custom: src/custom
+
+static:
+  command:
+    description: a command to be executed by your cli
+    files:
+      commandFile:
+        name: __slug__
+        suffix: '.ts'
+        directory: src/commands
+      commandTest:
+        name: __slug__
+        suffix: '.test.ts'
+        directory: test/commands
+    specs:
+      description:
+        type: string
+        required: true
+      args:
+        type: list
+        required: false
+        contents:
+          name:
+            type: string
+            required: true
+          description:
+            type: string
+            required: true
+            description: shown in help
+          required:
+            type: boolean
+            required: false
+            description: is the arg required?
+          default:
+            type: string
+            required: false
+            description: default value
+          options:
+            type: string[]
+            required: false
+            description: limit input to a discrete set
+          hidden:
+            type: boolean
+            required: false
+            description: hide this arg from help
+          parse:
+            type: function
+            required: false
+            description: maps input to new output
+      flags:
+        type: list
+        required: false
+        contents:
+          name:
+            type: string
+            required: true
+          type:
+            type: string
+            required: true
+            description: string (flag has value) or boolean (no value e.g. -f, --force)
+          char:
+            type: string
+            required: true
+            description: shorter flag version
+          description:
+            type: string
+            required: true
+            description: shown in help
+          required:
+            type: string
+            required: false
+            description: make flag required
+          default:
+            type: string|function
+            required: false
+            description: default value
+          options:
+            type: string[]
+            required: false
+            description: limit to a discrete set
+          hidden:
+            type: boolean
+            required: false
+            description: hide from help
+          multiple:
+            type: boolean
+            required: false
+            description: can use flag multiple times?
+          env:
+            type: string
+            required: false
+            description: default to value of environment variable
+          dependsOn:
+            type: string[]
+            required: false
+            description: other flags this one depends upon
+          exclusive:
+            type: string[]
+            required: false
+            description: flags that cannot be called with this one
+          parse:
+            type: function
+            required: false
+            description: maps input to new output
+          errorMessage:
+            type: string
+            required: true
+            description: message returned for faulty value
+
+format:
+  customFileFilter: '+(*.{ts,tsx,md}|.eslintrc)'
+  defaultOpenComment: "/*"
+  defaultCloseCOmment: "*/"
+  openComment:
+    .md: "\n[//]: # ("
+  closeComment:
+    .md: ")"
+
+setupSequence:
+  interactive:
+    - title: run npx
+      file: npx
+      arguments:
+        - oclif
+        - multi
+        - $codeDir
+  preCommands:
+    - title: run git
+      file: git
+      arguments:
+        - init
+        - $codeDir
+    - title: rm hello.ts
+      file: rm
+      arguments:
+        - $codeDir/src/commands/hello.ts
+    - title: rm hello.test.ts
+      file: rm
+      arguments:
+        - $codeDir/test/commands/hello.test.ts
+  mainInstallation: []
+  devInstallation:
+    - mocha@7.1.2
+
+ignore:
+  - lib
+  - oclif.manifest.json
+  - .nyc_output
+  - test/custom

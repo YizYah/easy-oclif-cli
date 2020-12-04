@@ -1,0 +1,112 @@
+{{start intro}}
+{{general.json.name}}
+======
+{{general.json.description}}
+{{custom afterDescription}}
+{{customStart badges}}
+{{start usageSection}}
+# Usage
+
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/{{general.json.name}}.svg)](https://npmjs.org/package/{{general.json.name}})
+[![Downloads/week](https://img.shields.io/npm/dw/{{general.json.name}}.svg)](https://npmjs.org/package/{{general.json.name}})
+[![License](https://img.shields.io/npm/l/{{general.json.name}}.svg)](https://github.com/{{general.json.repository}}/blob/master/package.json)
+{{customEnd badges}}
+{{end intro}}
+
+{{custom beforeToc}}
+{{customStart toc}}
+<!-- toc -->
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
+{{customEnd toc}}
+{{customStart usage}}
+
+<!-- usage -->
+```sh-session
+$ npm install -g {{general.json.name}}
+$ proj COMMAND
+running command...
+$ proj (-v|--version|version)
+{{general.json.name}}/0.0.0 linux-x64 node-v14.9.0
+$ proj --help [COMMAND]
+USAGE
+  $ proj COMMAND
+...
+```
+<!-- usagestop -->
+{{customEnd usage}}
+{{end usageSection}}
+
+{{start commandsSection}}
+# Commands
+
+{{customStart commands}}
+<!-- commands -->
+* [`proj help [COMMAND]`](#proj-help-command)
+* [`proj pull [FILE]`](#proj-pull-file)
+* [`proj push [FILE]`](#proj-push-file)
+
+## `proj help [COMMAND]`
+
+display help for proj
+
+```
+USAGE
+  $ proj help [COMMAND]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+OPTIONS
+  --all  see all commands in CLI
+```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
+
+## `proj pull [FILE]`
+
+pull all the current projects listed in a projects file.
+
+```
+USAGE
+  $ proj pull [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help                       show CLI help
+  -p, --projectsFile=projectsFile  path to a yaml file with list of projects.  Each must have dir and branch.
+
+DESCRIPTION
+  ...
+  Interactively confirms each project to pull and pulls to the proper directory.
+  'projectList' is a local path to a yaml file that contains projects by name
+  with their directory and branch.  Must be set up properly with git.
+```
+
+_See code: [src/commands/pull.ts](https://github.com/{{general.json.repository}}/blob/v0.0.0/src/commands/pull.ts)_
+
+## `proj push [FILE]`
+
+push all the current projects listed in a projects file.
+
+```
+USAGE
+  $ proj push [FILE]
+
+OPTIONS
+  -h, --help                       show CLI help
+  -p, --projectsFile=projectsFile  path to a yaml file with list of projects.  Each must have dir and branch.
+
+DESCRIPTION
+  ...
+  Interactively confirms each project to pull and pulls to the proper directory.
+  'projectList' is a local path to a yaml file that contains projects by name
+  with their directory and branch.  Must be set up properly with git.
+```
+
+_See code: [src/commands/push.ts](https://github.com/{{general.json.repository}}/blob/v0.0.0/src/commands/push.ts)_
+<!-- commandsstop -->
+{{customEnd commands}}
+{{end commandsSection}}

@@ -1,0 +1,54 @@
+userClass: user
+codeName: MyApp
+
+template:
+  dir: /home/yisroel/ns/templates/ns-template-easy-oclif-cli
+  name: easy-oclif-cli
+  version: 1
+
+static:
+  command:
+    push:
+      slug: push
+      specs:
+        description: >
+          push all the current projects listed in a projects file.
+
+          ...
+
+          Interactively confirms each project to pull and pulls to the proper
+          directory.
+
+          'projectList' is a local path to a yaml file that contains projects by
+          name
+
+          with their directory and branch.  Must be set up properly with git.
+        params:
+          - name: projectsFile
+            flag: p
+            description: >-
+              path to a yaml file with list of projects.  Each must have dir and
+              branch.
+            errorMessage: no such file or directory
+    pull:
+      slug: pull
+      specs:
+        description: >
+          pull all the current projects listed in a projects file.
+
+          ...
+
+          Interactively confirms each project to pull and pulls to the proper
+          directory.
+
+          'projectList' is a local path to a yaml file that contains projects by
+          name
+
+          with their directory and branch.  Must be set up properly with git.
+        params:
+          - name: projectsFile
+            flag: p
+            description: >-
+              path to a yaml file with list of projects.  Each must have dir and
+              branch.
+            errorMessage: no such file or directory
