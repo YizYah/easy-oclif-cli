@@ -71,11 +71,11 @@ static:
             required: true
             description: shown in help
           required:
-            type: string
+            type: boolean
             required: false
             description: make flag required
           default:
-            type: string|function
+            type: any
             required: false
             description: default value
           options:
@@ -106,10 +106,6 @@ static:
             type: function
             required: false
             description: maps input to new output
-          errorMessage:
-            type: string
-            required: true
-            description: message returned for faulty value
 
 format:
   customFileFilter: '+(*.{ts,tsx,md}|.eslintrc)'
