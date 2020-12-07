@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+/* eslint no-console: 0 */
 const codeDir = process.argv[2]
 
 if (codeDir) {
@@ -8,8 +8,8 @@ if (codeDir) {
                     '  You will have to enter some information at the prompts.')
     const { spawn } = require('child_process')
     const templateDir = __dirname + '/template'
-    // const shell = spawn('npx',['ns-flip', 'generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
-    const shell = spawn('ns',['generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
+
+    const shell = spawn('npx',['ns-flip', 'generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
     shell.on('close',(code)=> {
         if (code === 0) console.log(`Your template was created at ${codeDir}.`)
     })
