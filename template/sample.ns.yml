@@ -47,7 +47,7 @@ static:
         args:
           - name: projectDir
             description: the directory of the project
-            required: 'true'
+            required: true
           - name: branch
             description: the branch to release
             required: true
