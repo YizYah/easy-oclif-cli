@@ -8,47 +8,62 @@ template:
 
 static:
   command:
-    push:
-      slug: push
+    pushChanges:
+      slug: pushChanges
       specs:
-        description: >
-          push all the current projects listed in a projects file.
-
-          ...
-
-          Interactively confirms each project to pull and pulls to the proper
-          directory.
-
-          'projectList' is a local path to a yaml file that contains projects by
-          name
-
-          with their directory and branch.  Must be set up properly with git.
-        params:
-          - name: projectsFile
-            flag: p
-            description: >-
-              path to a yaml file with list of projects.  Each must have dir and
-              branch.
-            errorMessage: no such file or directory
-    pull:
-      slug: pull
+        description: >-
+          commit with message, run tests, if passing checkout branch, push to
+          remote, if flagged create PR.
+        args:
+          - name: projectDir
+            description: local project directory
+            required: true
+          - name: message
+            description: commit message
+            required: true
+          - name: branch
+            description: new branch to push
+            required: true
+        flags:
+          - name: force
+            type: boolean
+            char: f
+            description: push even if failing tests
+            required: false
+            default: false
+          - name: PR
+            type: boolean
+            char: p
+            description: should a PR be created?
+            required: false
+            default: false
+    release:
+      slug: release
       specs:
-        description: >
-          pull all the current projects listed in a projects file.
-
-          ...
-
-          Interactively confirms each project to pull and pulls to the proper
-          directory.
-
-          'projectList' is a local path to a yaml file that contains projects by
-          name
-
-          with their directory and branch.  Must be set up properly with git.
-        params:
-          - name: projectsFile
-            flag: p
-            description: >-
-              path to a yaml file with list of projects.  Each must have dir and
-              branch.
-            errorMessage: no such file or directory
+        description: >-
+          merge to main remotely, if flagged delete the new branch remotely,
+          checkout main locally, pull changes, release with summary, delete new
+          branch locally if flagged.
+        args:
+          - name: projectDir
+            description: the directory of the project
+            required: 'true'
+          - name: branch
+            description: the branch to release
+            required: true
+          - name: message
+            description: commit message
+            required: false
+        flags:
+          - name: deleteLocal
+            type: boolean
+            char: l
+            description: delete the branch locally after releasing
+            required: false
+            default: false
+          - name: deleteRemote
+            type: boolean
+            char: r
+            description: delete the new branch remotely after merging
+            required: false
+            default: false
