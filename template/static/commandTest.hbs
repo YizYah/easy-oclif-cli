@@ -8,21 +8,21 @@ import {expect, test} from '@oclif/test'
 {{customStart tests}}
 // replace everything in this tests section when you modify your code.
 describe('{{names.singularLowercase}}', () => {
-  test
-  .stdout()
-  .command(['{{names.singularLowercase}}'{{#each specs.args}}, 'sample{{capitalizeFirst name}}'{{/each}}{{#each specs.flags}}, '-{{char}}'{{#if (eq type 'string')}}, 'sample{{capitalizeFirst name}}'{{/if}}{{/each}}])
-  .it('runs {{names.singularLowercase}} with all args and flags', ctx => {
-    expect(ctx.stdout).to.contain('You have executed the {{names.singularLowercase}} command')
-  })
-
+test
+.stdout()
+.command(['{{names.singularLowercase}}'{{#each specs.args}}, 'sample{{capitalizeFirst name}}'{{/each}}{{#each specs.flags}}, '-{{char}}'{{#if (eq type 'string')}}, {{#if options}}'{{options.[0]}}'{{else}}'sample{{capitalizeFirst name}}'{{/if}}{{/if}}{{/each}}])
+.it('runs {{names.singularLowercase}} with all args and flags', ctx => {
+expect(ctx.stdout).to.contain('You have executed the {{names.singularLowercase}} command')
+})
 {{#if specs.args}}
-  test
-  .stderr()
-  .command(['{{names.singularLowercase}}'{{#each specs.args}}, 'sampleBadArgValue'{{/each}}{{#each specs.flags}}, '-{{char}}'{{#if (eq type 'string')}}, 'sample{{capitalizeFirst name}}'{{/if}}{{/each}}])
-  .catch(error => {
+
+    test
+    .stderr()
+    .command(['{{names.singularLowercase}}'{{#each specs.args}}, 'sampleBadArgValue'{{/each}}{{#each specs.flags}}, '-{{char}}'{{#if (eq type 'string')}}, {{#if options}}'{{options.[0]}}'{{else}}'sample{{capitalizeFirst name}}'{{/if}}{{/if}}{{/each}}])
+    .catch(error => {
     expect(error.message).to.contain('bad arg value')
-  })
-  .it('requires proper args')
+    })
+    .it('requires proper args')
 {{/if}}
 })
 {{customEnd tests}}

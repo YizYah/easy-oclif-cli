@@ -63,30 +63,28 @@ static args = [
 async run() {
 {{#if (or specs.args specs.flags)}}
     const {{curly true}}{{#if specs.args}}args{{/if}}{{#if (and specs.args specs.flags)}}, {{/if}}{{#if specs.flags}}flags{{/if}}{{curly}} = this.parse({{names.singular}})
-{{/if}}
-
-{{#if specs.args}}
+{{/if}}{{#if specs.args}}
     const {{curly true}}{{#each specs.args}}{{#if @first}}{{name}}{{/if}}{{#if (not @first)}}, {{name}}{{/if}}{{/each}}{{curly}} = args
-{{/if}}
-
-{{#if specs.flags}}
+{{/if}}{{#if specs.flags}}
     const {{curly true}}{{#each specs.flags}}{{#if @first}}{{name}}{{/if}}{{#if (not @first)}}, {{name}}{{/if}}{{/each}}{{curly}} = flags
 {{/if}}
-
 {{customStart run}}
 // Put your custom code here...
-
-Object.keys(args).map((argName: string) => {
+{{#if specs.args}}  Object.keys(args).map((argName: string) => {
 if (args[argName] === 'sampleBadArgValue')
 throw new Error(`bad arg value '${args[argName]}' for arg '${argName}'`)
 return argName
-})
-
+}){{/if}}
 this.log(`You have executed the {{names.singularLowercase}} command.
-Here are the args you used: {{#each specs.args}}
-    {{name}}: ${{curly true}}{{name}}{{curly}}{{/each}}
-Here are the flags you used: {{#each specs.flags}}
-    {{name}}: ${{curly true}}{{name}}{{curly}}{{/each}}
+{{#if specs.args}}
+    Here are the args you used: {{#each specs.args}}
+        {{name}}: ${{curly true}}{{name}}{{curly}}{{/each}}
+{{/if}}
+{{#if specs.flags}}
+    Here are the flags you used: {{#each specs.flags}}
+        {{name}}: ${{curly true}}{{name}}{{curly}}{{/each}}
+
+{{/if}}
 Learn how to modify the generated code here: https://ns-flip.nostack.net/Making-Files-Customizable.`)
 {{customEnd run}}
 }
