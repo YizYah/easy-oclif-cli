@@ -76,17 +76,22 @@ async run() {
 {{customStart run}}
 // Put your custom code here...
 
-Object.keys(args).map((argName: string) => {
+{{#if specs.args}}Object.keys(args).map((argName: string) => {
 if (args[argName] === 'sampleBadArgValue')
 throw new Error(`bad arg value '${args[argName]}' for arg '${argName}'`)
 return argName
-})
+}){{/if}}
 
 this.log(`You have executed the {{names.singularLowercase}} command.
-Here are the args you used: {{#each specs.args}}
-    {{name}}: ${{curly true}}{{name}}{{curly}}{{/each}}
-Here are the flags you used: {{#each specs.flags}}
-    {{name}}: ${{curly true}}{{name}}{{curly}}{{/each}}
+{{#if specs.args}}
+    Here are the args you used: {{#each specs.args}}
+        {{name}}: ${{curly true}}{{name}}{{curly}}{{/each}}
+{{/if}}
+{{#if specs.flags}}
+    Here are the flags you used: {{#each specs.flags}}
+        {{name}}: ${{curly true}}{{name}}{{curly}}{{/each}}
+
+{{/if}}
 Learn how to modify the generated code here: https://ns-flip.nostack.net/Making-Files-Customizable.`)
 {{customEnd run}}
 }
