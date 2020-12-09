@@ -33,6 +33,11 @@ npx ns-flip settings $CODE_DIR
 ```
 and follow the prompts.
 
+Then call `generate` to update your code from the new settings:
+```
+npx ns-flip generate $CODE_DIR
+```
+
 # Changing Custom Code
 Of course, you still have to create your code.  You should be able to just about anything in node using Typescript.  You should be able to do just about anything, but follow the [safe custom code practices of ns-flip](https://ns-flip.nostack.net/Safe-Custom-Code) to be able to reapply the template in the future.
 
