@@ -55,9 +55,11 @@ Basically:
 Take a minute and set up alerts about releases to this template.
 1. Go to the [GitHub repo](https://github.com/YizYah/easy-oclif-cli) and click the arrow by the `Watch` button on the upper right.
 
-<img src="images/2.jpg" alt="Image sample" title="Hi" width="200">
+<img src="images/2.jpg" alt="Watch Button" title="Watch" width="200">
 
 2. Choose "Custom", and then select "Releases".
+
+<img src="images/3.jpg" alt="Watch Releases" title="Releases" width="200">
 
 To call a newly released version just the first command again, with the same path for `$CODE_DIR`.
 ```
