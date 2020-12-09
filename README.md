@@ -26,7 +26,7 @@ cd $CODE_DIR
 npm install
 npm link
 ```
-Call the name of your cli (or whatever you put for the command name when you created it.)
+Call the name of your cli (or whatever you put for the command bin name when you created it in Oclif.)
 
 ## (2) Update the Commands
 Call 
