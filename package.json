@@ -1,8 +1,16 @@
 {
   "name": "easy-oclif-cli",
   "version": "1.0.8",
-  "description": "ns-flip template to create a cli easily using oclif.  (you can update the template and keep your custom changes!)",
+  "descripton": "ns-flip updatable template to create a cli easily using oclif.",
   "main": "index.js",
+  "keywords": [
+    "oclif",
+    "cli",
+    "ns-flip",
+    "template",
+    "generate",
+    "custom"
+  ],
   "scripts": {
     "test": "eslint . --ext .js --config .eslintrc.js"
   },
