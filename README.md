@@ -6,7 +6,11 @@ Super easy cli creation and maintenance using
 # Why
 The combination of the power of oclif with the simplicity of ns-flip is amazing.  You create a cli instantly and when necessary you can update the template without affecting your custom changes.
 
-# Start
+# How
+Follow the steps below.  Here's a complete video:
+[![Create Setup Sequence With ns-flip 1.6 Templating010394](http://img.youtube.com/vi/L_pKk148_O4/0.jpg)](http://www.youtube.com/watch?v=L_pKk148_O4)
+
+
 Run
 ```
 npx easy-oclif-cli $CODE_DIR
@@ -51,9 +55,13 @@ Basically:
     ```
 # Updating Your Template
 Take a minute and set up alerts about releases to this template.
-1. Go to the [GitHub repo](https://github.com/YizYah/easy-oclif-cli)
-2. Click the arrow by the `Watch` button on the upper right.
-3. Choose "Custom", and then select "Releases".
+1. Go to the [GitHub repo](https://github.com/YizYah/easy-oclif-cli) and click the arrow by the `Watch` button on the upper right.
+
+     ![](images/2.jpg)
+
+2. Choose "Custom", and then select "Releases".
+
+    ![](images/4.jpg)
 
 To call a newly released version just the first command again, with the same path for `$CODE_DIR`.
 ```
@@ -67,3 +75,6 @@ Post on the [ns-flip Community](https://spectrum.chat/ns-flip?tab=posts).
 # See Also
 * [ns-flip documentation](https://ns-flip.nostack.net/Home)
 * [oclif documentation](https://oclif.io/docs/commands)
+
+[//]: # (Image References)
+[watch]: ./images/watch.jpg "Selecting Watch"
