@@ -48,6 +48,7 @@ static:
             type: boolean
             required: false
             description: hide this arg from help
+            default: false
           parse:
             type: function
             required: false
@@ -63,6 +64,10 @@ static:
             type: string
             required: true
             description: string (flag has value) or boolean (no value e.g. -f, --force)
+            choices:
+              - string
+              - boolean
+            default: string
           char:
             type: string
             required: true
@@ -88,10 +93,12 @@ static:
             type: boolean
             required: false
             description: hide from help
+            default: false
           multiple:
             type: boolean
             required: false
             description: can use flag multiple times?
+            default: false
           env:
             type: string
             required: false
