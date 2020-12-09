@@ -50,11 +50,16 @@ Basically:
     npx ns-flip check $CODE_DIR
     ```
 # Updating Your Template
-Just call 
+Take a minute and set up alerts about releases to this template.
+1. Go to the [GitHub repo](https://github.com/YizYah/easy-oclif-cli)
+2. Click the arrow by the `Watch` button on the upper right.
+3. Choose "Custom", and then select "Releases".
+
+To call a newly released version just the first command again, with the same path for `$CODE_DIR`.
 ```
 npx ns-flip settings $CODE_DIR
 ```
-again.
+All of the settings and custom changes in the `$CODE_DIR` cli will be retained if you followed the [safe custom code practices of ns-flip](https://ns-flip.nostack.net/Safe-Custom-Code).
 
 # Help
 Post on the [ns-flip Community](https://spectrum.chat/ns-flip?tab=posts).
