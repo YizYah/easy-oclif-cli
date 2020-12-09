@@ -6,7 +6,12 @@ Super easy cli creation and maintenance using
 # Why
 The combination of the power of oclif with the simplicity of ns-flip is amazing.  You create a cli instantly and when necessary you can update the template without affecting your custom changes.
 
-# Start
+# How
+Follow the steps below.  Or here's a complete video:
+
+[![Create Setup Sequence With ns-flip 1.6 Templating010394](http://img.youtube.com/vi/L_pKk148_O4/0.jpg)](http://www.youtube.com/watch?v=L_pKk148_O4)
+
+## (1) Create a Starter CLI
 Run
 ```
 npx easy-oclif-cli $CODE_DIR
@@ -15,18 +20,15 @@ where `$CODE_DIR` is the path to your desired directory for your cli.
 
 That will take a few minutes, and will have an interactive portion.  You will be requested by Oclif to answer a number of questions about what cli you want to create. We suggest choosing `npm` rather than the default `yarn`.
 
-Go to [easy-oclif-cli in GitHub](https://github.com/YizYah/easy-oclif-cli) and click on "Watch" in the upper right corner to stay updated about new versions of the template.
-
-# Run Your CLI
-Try running the default cli if you like.
+You can run the starter cli if you like.
 ```
 cd $CODE_DIR
 npm install
 npm link
 ```
-Call the name of your cli (or whatever you put for the command name when you created it.)
+Call the name of your cli (or whatever you put for the command bin name when you created it in Oclif.)
 
-# Updating the Commands
+## (2) Update the Commands
 Call 
 ```
 npx ns-flip settings $CODE_DIR
@@ -38,8 +40,8 @@ Then call `generate` to update your code from the new settings:
 npx ns-flip generate $CODE_DIR
 ```
 
-# Changing Custom Code
-Of course, you still have to create your code.  You should be able to just about anything in node using Typescript.  You should be able to do just about anything, but follow the [safe custom code practices of ns-flip](https://ns-flip.nostack.net/Safe-Custom-Code) to be able to reapply the template in the future.
+## (3) Change the Custom Code
+Of course, you still have to create your code.  You should be able to do just about anything in possible in Node using Typescript.  But, follow the [safe custom code practices of ns-flip](https://ns-flip.nostack.net/Safe-Custom-Code) to be able to reapply the template in the future without losing anything.
 
 Basically:
 * For any command `command`, find it at `src/commands/command.ts`, and modify the code inside of the designated `run` area.
@@ -49,13 +51,17 @@ Basically:
     ``` 
     npx ns-flip check $CODE_DIR
     ```
-# Updating Your Template
+## (4) Updating Your Template
 Take a minute and set up alerts about releases to this template.
-1. Go to the [GitHub repo](https://github.com/YizYah/easy-oclif-cli)
-2. Click the arrow by the `Watch` button on the upper right.
-3. Choose "Custom", and then select "Releases".
+1. Go to the [GitHub repo](https://github.com/YizYah/easy-oclif-cli) and click the arrow by the `Watch` button on the upper right.
 
-To call a newly released version just the first command again, with the same path for `$CODE_DIR`.
+<img src="images/2.jpg" alt="Watch Button" title="Watch" width="200">
+
+2. Choose "Custom", and then select "Releases".
+
+<img src="images/3.jpg" alt="Watch Releases" title="Releases" width="200">
+
+To reapply the template with a newly released version, just the first command again.  Make sure to use he same path for the legacy `$CODE_DIR`.
 ```
 npx ns-flip settings $CODE_DIR
 ```
