@@ -1,10 +1,8 @@
-easy-oclif-cli
------------------
-Super easy cli creation and maintenance using 
-[ns-flip](https://ns-flip.nostack.net/) and [oclif](https://oclif.io/).  As with any ns-flip template, you can then apply an updated version of the template and all of your own custom code will be preserved.  
+ns-flip replaceable template to create a cli easily using oclif.
 
 # Why
-The combination of the power of oclif with the simplicity of ns-flip is amazing.  You create a cli instantly and when necessary you can update the template without affecting your custom changes.
+
+The combination of the power of [oclif](https://oclif.io/) with the simple updates of [ns-flip](https://ns-flip.nostack.net/) is amazing.  You create a cli instantly and when necessary you can update the template without affecting your custom changes.
 
 # How
 Follow the steps below.  Or here's a complete video:
@@ -18,7 +16,7 @@ npx easy-oclif-cli $CODE_DIR
 ```
 where `$CODE_DIR` is the path to your desired directory for your cli.
 
-That will take a few minutes, and will have an interactive portion.  You will be requested by Oclif to answer a number of questions about what cli you want to create. We suggest choosing `npm` rather than the default `yarn`.
+That will have an interactive portion.  You will be requested by oclif to answer a number of questions about what cli you want to create. You should choose the default 'TypeScript', and we suggest choosing `npm` rather than the default `yarn`.
 
 You can run the starter cli if you like.
 ```
