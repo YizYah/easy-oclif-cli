@@ -55,9 +55,7 @@ Basically:
 Take a minute and set up alerts about releases to this template.
 1. Go to the [GitHub repo](https://github.com/YizYah/easy-oclif-cli) and click the arrow by the `Watch` button on the upper right.
 
-<img src="images/2.jpg" alt="Image sample" title="Hi">
-
-     ![](images/2.jpg)
+<img src="images/2.jpg" alt="Image sample" title="Hi" width="200">
 
 2. Choose "Custom", and then select "Releases".
 
