@@ -61,7 +61,7 @@ Take a minute and set up alerts about releases to this template.
 
 <img src="images/3.jpg" alt="Watch Releases" title="Releases" width="200">
 
-To call a newly released version just the first command again, with the same path for `$CODE_DIR`.
+To reapply the template with a newly released version, just the first command again.  Make sure to use he same path for the legacy `$CODE_DIR`.
 ```
 npx ns-flip settings $CODE_DIR
 ```
