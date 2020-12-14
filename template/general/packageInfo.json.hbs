@@ -1,0 +1,42 @@
+{
+  "name": "{{general.packageName}}",
+  "description": "{{general.description}}",
+  "author": "{{general.author}}",
+  "bin": {
+    "{{general.binName}}": "./bin/run"
+  },
+  "bugs": "https://github.com/{{general.owner}}/{{general.repositoryName}}/issues",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/{{general.owner}}/{{general.repositoryName}}",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "{{general.license}}",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "binName",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "{{general.owner}}/{{general.repositoryName}}",
+  "scripts": {
+    "lint": "eslint . --ext .ts --config .eslintrc",
+    "lintfix": "eslint . --ext .ts --config .eslintrc --fix",
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
