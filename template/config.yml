@@ -4,6 +4,39 @@ category: oclif multi
 dirs:
   custom: src/custom
 
+general:
+  packageName:
+    type: string
+    required: true
+    description: name of package
+  binName:
+    type: string
+    required: false
+    description: executable name if different than name
+  owner:
+    type: string
+    required: true
+    description: owner of the GitHub repo
+  description:
+    type: string
+    required: false
+    description: one liner about what the cli does
+  author:
+    type: string
+    required: true
+    description: author of the package
+  repositoryName:
+    type: string
+    required: true
+    description: repository on GitHub
+  license:
+    type: string
+    required: false
+    default: MIT
+    options:
+      - MIT
+    description: license
+
 static:
   command:
     description: a command to be executed by your cli
@@ -126,29 +159,30 @@ format:
     .md: ")"
 
 setupSequence:
-  interactive:
-    - title: run npx
-      file: npx
-      arguments:
-        - oclif
-        - multi
-        - $codeDir
+  packageJson:
+    name: __name__
+    bin:
+      __binName__: run
   preCommands:
     - title: run git
       file: git
       arguments:
         - init
         - $codeDir
-    - title: rm hello.ts
-      file: rm
+    - title: package json file
+      file: npm
       arguments:
-        - $codeDir/src/commands/hello.ts
-    - title: rm hello.test.ts
-      file: rm
-      arguments:
-        - $codeDir/test/commands/hello.test.ts
-  mainInstallation: []
+        - init
+        - '-y'
+      options:
+        cwd: $codeDir
+  mainInstallation:
+    - '@oclif/config@^1'
+    - '@oclif/command@^1'
+    - '@oclif/plugin-help@^3'
   devInstallation:
+    - '@oclif/dev-cli@^1'
+    - globby@^10
     - mocha@7.1.2
 
 ignore:
