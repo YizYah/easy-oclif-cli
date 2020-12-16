@@ -185,6 +185,8 @@ setupSequence:
     - '@oclif/dev-cli@^1'
     - globby@^10
     - mocha@7.1.2
+    - nyc@^14
+    - chai@^4
     - '@types/node@^10'
     - typescript@^3.3
     - ts-node@^8
