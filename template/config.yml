@@ -13,22 +13,25 @@ general:
     type: string
     required: false
     description: executable name if different than name
-  owner:
-    type: string
-    required: true
-    description: owner of the GitHub repo
-  description:
-    type: string
-    required: false
-    description: one liner about what the cli does
+    default: __answers.packageName__
   author:
     type: string
     required: true
     description: author of the package
+  owner:
+    type: string
+    required: true
+    description: owner of the GitHub repo
+    default: __answers.author__
+  description:
+    type: string
+    required: false
+    description: one liner about what the cli does
   repositoryName:
     type: string
     required: true
     description: repository on GitHub
+    default: __answers.packageName__
   license:
     type: string
     required: false
