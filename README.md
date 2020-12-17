@@ -69,11 +69,9 @@ All of the settings and custom changes in the `$CODE_DIR` cli will be retained i
 The classic generator for creating an oclif cli is [oclif](https://www.npmjs.com/package/oclif). Both that package and this one use the same core packages, including `@oclif/command` and `@oclif/config`. It offers more alternatives (e.g. yarn and js). So if you want to use js rather than ts (although they discourage the practice), you can do so with that package.  On the debit side, you can't update your template and regenerate your code without replacing your legacy changes.
 
 
-  The classic node package for CLI creation is [Commander](https://www.npmjs.com/package/commander).
+  The classic node package for CLI creation is [Commander](https://www.npmjs.com/package/commander).  Commander is not a _generator_--it is a package you can include when you build a cli from scratch.  If you are interested, you can find some [Yeoman generators](https://yeoman.io/generators/) based on it--none seem to have taken off. Let us know if one works well for you.  Also, if someone wants to build one, please let us know.
 
-Commander is not a generator--its a package you can include when you build a cli from scratch.  You can find some [Yeoman generators](https://yeoman.io/generators/) based on it--none seem to have taken off. If someone wants to build one please let us know.
-
-But the best alternatives to `easy-oflif-cli` have not been created yet.  [Let us know](https://spectrum.chat/ns-flip?tab=posts) what you'd like to see--it's not easy to create ns-flip templates! :smiley:
+But, the best alternatives to `easy-oflif-cli` have not been created yet.  [Let us know](https://spectrum.chat/ns-flip?tab=posts) what you'd like to see--it's easy to create ns-flip templates! :smiley:
 
 # Help
 Post on the [ns-flip Community](https://spectrum.chat/ns-flip?tab=posts).
