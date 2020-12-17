@@ -5,7 +5,7 @@ ns-flip replaceable template to create a cli easily using oclif.
 The combination of the power of [oclif](https://oclif.io/) with the simple updates of [ns-flip](https://ns-flip.nostack.net/) is amazing.  You create a cli instantly and when necessary you can update the template without affecting your custom changes.
 
 # How
-Follow the steps below.  Or here's a complete video:
+Follow the steps below.  Or here's a video:
 
 [![Create Setup Sequence With ns-flip 1.6 Templating010394](http://img.youtube.com/vi/L_pKk148_O4/0.jpg)](http://www.youtube.com/watch?v=L_pKk148_O4)
 
@@ -64,6 +64,15 @@ To reapply the template with a newly released version, just the first command ag
 npx ns-flip settings $CODE_DIR
 ```
 All of the settings and custom changes in the `$CODE_DIR` cli will be retained if you followed the [safe custom code practices of ns-flip](https://ns-flip.nostack.net/Safe-Custom-Code).
+
+# Alternatives
+The classic Oclif generator, which inspired this one, is [Oclif](https://www.npmjs.com/package/oclif)! It offers more alternatives (e.g. yarn and js) but on the debit side you can't update your template without replacing your legacy code.
+
+Both of them use the same core packages, including `@oclif/command` and `@oclif/config`.
+
+The classic node package for CLI creation is [Commander](https://www.npmjs.com/package/commander).  That's not a generator--its a package you can include when you build a cli from scratch.  You can find some [Yeoman generators](https://yeoman.io/generators/) based on it--none seem to have taken off.
+
+But the best alternatives to `easy-oflif-cli` have not been created yet.  [Let us know](https://spectrum.chat/ns-flip?tab=posts) what you'd like to see--it's not easy to create ns-flip templates! :smiley:
 
 # Help
 Post on the [ns-flip Community](https://spectrum.chat/ns-flip?tab=posts).
