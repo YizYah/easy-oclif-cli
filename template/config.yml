@@ -9,6 +9,7 @@ general:
     type: string
     required: true
     description: name of package
+    default: __session.defaultProjectName__
   binName:
     type: string
     required: false
@@ -18,6 +19,7 @@ general:
     type: string
     required: true
     description: author of the package
+    default: __session.userName__
   owner:
     type: string
     required: true
@@ -179,6 +181,14 @@ setupSequence:
         - '-y'
       options:
         cwd: $codeDir
+    - title: rimraf
+      file: npm
+      arguments:
+        - i
+        - rimraf
+      options:
+        cwd: $codeDir
+      prevent: __session.notWin__
   mainInstallation:
     - '@oclif/config@^1'
     - '@oclif/command@^1'
@@ -186,6 +196,7 @@ setupSequence:
     - tslib@^1
   devInstallation:
     - '@oclif/dev-cli@^1'
+    - '@oclif/test@^1'
     - globby@^10
     - mocha@7.1.2
     - nyc@^14
