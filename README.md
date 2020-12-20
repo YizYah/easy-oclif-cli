@@ -42,13 +42,10 @@ npx ns-flip generate $CODE_DIR
 Of course, you still have to create your code.  You should be able to do just about anything in possible in Node using Typescript.  But, follow the [safe custom code practices of ns-flip](https://ns-flip.nostack.net/Safe-Custom-Code) to be able to reapply the template in the future without losing anything.
 
 Basically:
-* For any command `command`, find it at `src/commands/command.ts`, and modify the code inside of the designated `run` area.
-* Add any files or directories you like in the `src/custom` directory, and import them into the command file in the designated `customImports` section.
+* Find any command in the `src/commands/<commandName>.ts` file.  Modify the code inside of the designated `run` and `customImports` areas.
+* Add any files or directories you like in the `src/custom` directory.
 * You will have to modify the test code also at `test/commands/command.test.ts`.  You can also add anything you want into `test/custom`.
-* Before you update your template, make sure to check your code for safety by calling:
-    ``` 
-    npx ns-flip check $CODE_DIR
-    ```
+
 ## (4) Updating Your Template
 Take a minute and set up alerts about releases to this template.
 1. Go to the [GitHub repo](https://github.com/YizYah/easy-oclif-cli) and click the arrow by the `Watch` button on the upper right.
@@ -59,6 +56,10 @@ Take a minute and set up alerts about releases to this template.
 
 <img src="images/3.jpg" alt="Watch Releases" title="Releases" width="200">
 
+Before you update your template, make sure to check your code for safety by calling:
+    ``` 
+    npx ns-flip check $CODE_DIR
+    ```
 To reapply the template with a newly released version, just the first command again.  Make sure to use he same path for the legacy `$CODE_DIR`.
 ```
 npx ns-flip settings $CODE_DIR
