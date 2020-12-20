@@ -33,10 +33,16 @@ npx ns-flip settings $CODE_DIR
 ```
 and follow the prompts.
 
-Then call `generate` to update your code from the new settings:
+You will be prompted to regenerate your code after you make changes.  You can also call it separately:
 ```
 npx ns-flip generate $CODE_DIR
 ```
+
+After you have generated updates to your commands, you can run the `prepack` command build into [oclif](https://oclif.io) to regenerate the commands descriptions in your README:
+```console
+cd $CODE_DIR
+npm run prepack
+``` 
 
 ## (3) Change the Custom Code
 Of course, you still have to create your code.  You should be able to do just about anything in possible in Node using Typescript.  But, follow the [safe custom code practices of ns-flip](https://ns-flip.nostack.net/Safe-Custom-Code) to be able to reapply the template in the future without losing anything.
