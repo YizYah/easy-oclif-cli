@@ -9,7 +9,7 @@ if (codeDir) {
     const { spawn } = require('child_process')
     const templateDir = __dirname + '/template'
 
-    const shell = spawn('npx',['ns-flip@2.4.6', 'generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
+    const shell = spawn('npx',['ns-flip', 'generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
     shell.on('close',(code)=> {
         if (code === 0) console.log(`Your template was created at ${codeDir}.`)
     })
