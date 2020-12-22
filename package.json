@@ -1,6 +1,6 @@
 {
   "name": "easy-oclif-cli",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "descripton": "ns-flip updatable template to create a cli easily using oclif.",
   "main": "index.js",
   "keywords": [
