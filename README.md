@@ -5,10 +5,11 @@ ns-flip replaceable template to create a cli easily using oclif.
 The combination of the power of [oclif](https://oclif.io/) with the simple updates of [ns-flip](https://ns-flip.nostack.net/) is amazing.  You create a cli instantly and when necessary you can update the template without affecting your custom changes.
 
 # How
-Follow the steps below.  Or here's a video:
+Here's a 1-minute video:
 
-[![Create Setup Sequence With ns-flip 1.6 Templating010394](http://img.youtube.com/vi/L_pKk148_O4/0.jpg)](http://www.youtube.com/watch?v=L_pKk148_O4)
+[![Introducing easy-oclif-cli](http://img.youtube.com/vi/MAVN8hZpcqY/0.jpg)](http://www.youtube.com/watch?v=MAVN8hZpcqY)
 
+Follow the steps below.  
 ## (1) Create a Starter CLI
 Run
 ```
