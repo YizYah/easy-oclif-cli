@@ -10,7 +10,7 @@ if (codeDir) {
     const templateDir = __dirname + '/template'
 
     const shell = spawn('npx',['ns-flip', 'generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
-    shell.on('close',(code)=> {
+    shell.on('close',(code: any)=> {
         if (code === 0) console.log(`Your template was created at ${codeDir}.`)
     })
 } else {
