@@ -22,7 +22,7 @@
   },
   "author": "YizYah @YizYah",
   "bin": {
-    "easy-oclif-cli": "index.ts"
+    "easy-oclif-cli": "src/index.ts"
   },
   "license": "MIT",
   "bugs": {
