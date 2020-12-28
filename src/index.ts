@@ -7,7 +7,7 @@ if (codeDir) {
                     '  We will download a temporary version of ns-flip, and then of oclif.' +
                     '  You will have to enter some information at the prompts.')
     const { spawn } = require('child_process')
-    const templateDir = __dirname + '/template'
+    const templateDir = __dirname + '/../src/template'
 
     const shell = spawn('npx',['ns-flip', 'generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
     shell.on('close',(code: any)=> {
