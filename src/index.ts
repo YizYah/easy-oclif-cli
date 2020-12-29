@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /* eslint no-console: 0 */
+require('ts-node')
 const codeDir = process.argv[2]
 
 if (codeDir) {
@@ -10,7 +11,7 @@ if (codeDir) {
     const templateDir = __dirname + '/../src/template'
 
     const shell = spawn('npx',['ns-flip', 'generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
-    shell.on('close',(code: any)=> {
+    shell.on('close',(code)=> {
         if (code === 0) console.log(`Your template was created at ${codeDir}.`)
     })
 } else {
