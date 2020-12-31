@@ -10,7 +10,7 @@ if (codeDir) {
     const templateDir = __dirname + '/../src/template'
     const shell = spawn('npx',['ns-flip', 'generate', codeDir, '-t', templateDir], { stdio: 'inherit' })
     shell.on('close',(code)=> {
-        if (code === 0) console.log(`Your template was created at ${codeDir}.`)
+        if (code === 0) console.log(`Follow the rest the instructions at https://www.npmjs.com/package/easy-oclif-cli to proceed!`)
     })
 } else {
     console.error('You need to provide a path to the new code base.' +
